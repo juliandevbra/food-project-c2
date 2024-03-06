@@ -1,20 +1,13 @@
-
-import { useState } from 'react'
 import './App.css'
-import ClassComponent from './Components/ClassComponent'
-import FuncComponent from './Components/FuncComponent'
-import Dog from './Components/Dog'
+import ExampleAxios from './Components/ExampleAxios'
+import Pet from './Components/Pet'
 
 function App() {
-  const [show, setShow] = useState(false)
 
   return (
     <>
-    {show ? <ClassComponent/> : <FuncComponent/>}
-    <button onClick={() => setShow(!show)}>
-      Mostrar componente de {show ? 'función' : 'clase'}
-    </button>
-        {/* <Dog/> */}
+        <Pet/>
+        <ExampleAxios/>
     </>
   )
 }
