@@ -14,7 +14,6 @@ const RecipeDetail = () => {
         .then(res => setRecipe(res.data))
     }, [])
    
-
   return (
     <div>
         <h3>{recipe.title}</h3>
