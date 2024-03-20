@@ -11,6 +11,7 @@ const Navbar = () => {
         <Link to={routes.home}><h4>Home</h4></Link>
         <Link to={routes.contact}><h4>Contact</h4></Link>
         <Link to={routes.about}><h4>About</h4></Link>
+        <Link to={routes.favs}><h4>Favs</h4></Link>
     </div>
   )
 }
