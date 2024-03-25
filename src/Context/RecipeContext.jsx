@@ -7,7 +7,7 @@ export const RecipeStates = createContext()
 const initialState = {
     recipeList: [],
     recipeSelected: {},
-    favs: []
+    favs: JSON.parse(localStorage.getItem('favs')) || []
 }
 
 const Context = ({children}) => {
@@ -17,7 +17,6 @@ const Context = ({children}) => {
     console.log(state)
     const apiKey = '68d481a0fbc340308fbf934f836ee8c6'
     const url = 'https://api.spoonacular.com/recipes/random?number=10&apiKey=' + apiKey
-
    
     //Todas las funciones que necesito
     useEffect(() => {
@@ -27,6 +26,10 @@ const Context = ({children}) => {
             dispatch({type: 'GET_LIST', payload: res.data.recipes})
         }) 
     }, [])
+
+    useEffect(() => {
+        localStorage.setItem('favs', JSON.stringify(state.favs))
+    }, [state.favs])
 
     return (
         <RecipeStates.Provider value={{state, dispatch}}>
